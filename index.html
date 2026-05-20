@@ -4,12 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simple Todo App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <main class="app">
       <div class="app-header">
-        <h1>Todo App</h1>
+        <div class="app-title">
+          <span class="app-icon">✅</span>
+          <h1>My Todos</h1>
+        </div>
         <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light theme">🌙</button>
       </div>
 
@@ -18,14 +24,24 @@
         <input
           id="todo-input"
           type="text"
-          placeholder="Enter a todo"
+          placeholder="What needs to be done?"
           autocomplete="off"
           required
         />
-        <button type="submit">Add</button>
+        <button type="submit">
+          <span class="btn-icon">+</span>
+          <span>Add</span>
+        </button>
       </form>
 
+      <div class="list-header">
+        <span class="list-label">Tasks</span>
+        <span id="task-count" class="task-count">0 items</span>
+      </div>
+
       <ul id="todo-list" class="todo-list" aria-live="polite"></ul>
+
+      <p id="empty-state" class="empty-state">No tasks yet — add one above! 🎉</p>
     </main>
 
     <script src="script.js"></script>
